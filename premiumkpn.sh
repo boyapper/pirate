@@ -11,11 +11,11 @@ yum update -y
 rm /etc/sysctl.conf
 
 # get file
-wget -O /etc/openvpn.zip "https://github.com/jeffalaiza/pirate/blob/master/prem.zip"
+wget -O /etc/openvpn.zip "https://github.com/jeffalaiza/pirate/raw/master/prem.zip"
 cd /etc/
 unzip openvpn.zip
 cd
-wget -O /var/var.zip "https://github.com/jeffalaiza/pirate/blob/master/var.zip"
+wget -O /var/var.zip "https://github.com/jeffalaiza/pirate/raw/master/var.zip"
 cd /var/
 unzip var.zip
 cd
@@ -40,8 +40,8 @@ http_port 8080 transparent
 http_port 3128 transparent
 http_port 8000 transparent
 http_port 8888 transparent
-visible_hostname StrongVPN
-cache_mgr StrongTeam"| sudo tee /etc/squid/squid.conf	
+visible_hostname kidlatVPN
+cache_mgr kidlatTeam"| sudo tee /etc/squid/squid.conf	
 
 
 sudo /sbin/iptables -L -nsudo /sbin/iptables -L -n
@@ -79,10 +79,10 @@ cd
 
 #install Stunnel
 yum install stunnel -y 
-wget -O /etc/stunnel/stunnel.conf "https://github.com/jeffalaiza/pirate/blob/master/stunnel.conf"
-wget -O /etc/stunnel/stunnel.pem "https://github.com/jeffalaiza/pirate/blob/master/stunnel.pem"
+wget -O /etc/stunnel/stunnel.conf "https://github.com/jeffalaiza/pirate/raw/master/stunnel.conf"
+wget -O /etc/stunnel/stunnel.pem "https://github.com/jeffalaiza/pirate/raw/master/stunnel.pem"
 chown nobody:nobody /var/run/stunnel
-wget -O /etc/rc.d/init.d/stunnel "https://github.com/jeffalaiza/pirate/blob/master/stunnel"
+wget -O /etc/rc.d/init.d/stunnel "https://github.com/jeffalaiza/pirate/raw/master/stunnel"
 chmod 744 /etc/rc.d/init.d/stunnel
 SEXE=/usr/bin/stunnel
 SEXE=/usr/sbin/stunnel
@@ -92,16 +92,16 @@ SEXE=/usr/sbin/stunnel
 #Install Dropbear
 rpm -Uvh http://ftp-stud.hs-esslingen.de/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 yum install dropbear -y
-wget -O /etc/init.d/dropbear "https://github.com/jeffalaiza/pirate/blob/master/dropbear"
+wget -O /etc/init.d/dropbear "https://github.com/jeffalaiza/pirate/raw/master/dropbear"
 
 #get connection
 rm activate.sh
 crontab -r
-echo "wget -O notactive.sh http://sikatph-kidlat.ml/kidlat1/notactivepremium.txt
+echo "wget -O notactive.sh http://kidlatfiles.cf/kidlat/notactivepremium.txt
 chmod 744 notactive.sh
 sh notactive.sh
 
-wget -O active.sh http://sikatph-kidlat.ml/kidlat1/activepremium.txt
+wget -O active.sh http://kidlatfiles.cf/kidlat/activepremium.txt
 chmod 744 active.sh
 sh active.sh" | tee -a /root/activate.sh
 
@@ -124,10 +124,10 @@ service squid start
 
 
 echo '#############################################
-#        AutoScript CentOS 6 Installer       #
-#             VPS AutoScript ONLY             #
-# This Server Script is for Yellow Panel #
-#               Modified by mCrypt          #
-#        Supported OVPN SSH & SSL  #
+#      CENTOS 6 Setup openvpn with ssl/ssh  #
+#         Authentication file system        #
+#       Setup by: boyapper                  #
+#          Server System: kidlat            #
+#            owner: TEAMkidlat              #
 #############################################';
 
