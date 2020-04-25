@@ -124,9 +124,7 @@ service squid start
 
 
 echo '#############################################
-#      CENTOS 6 Setup openvpn with ssl/ssh  #
-#         Authentication file system        #
-#       Setup by: boyapper                  #
-#          Server System: kidlat            #
-#            owner: TEAMkidlat              #
+#      Autoscript for Yellow Panel ONLY     #
+#             OS Type : Centos 6            #
+#       Works on OVPN SSH and SSL Type      #
 #############################################';
